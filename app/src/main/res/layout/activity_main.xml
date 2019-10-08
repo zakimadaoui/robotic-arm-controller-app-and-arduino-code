@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/Task3_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="50dp"
+        android:background="#F44336"
+        android:onClick="Task3"
+        android:text="EXTRA"
+        app:layout_constraintBottom_toTopOf="@+id/Grip_Slider"
+        app:layout_constraintEnd_toStartOf="@+id/Connect_Button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/Connect_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="50dp"
+        android:background="#2196F3"
+        android:onClick="Connect"
+        android:text="Connect BT"
+        app:layout_constraintBottom_toTopOf="@+id/Grip_Slider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Task3_button" />
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/mrrobot2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/Grip_Slider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="32dp"
+        android:progressTint="@color/red_dark"
+        android:thumbTint="@color/red"
+        app:layout_constraintBottom_toTopOf="@+id/joystickView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/Grip_Strength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/grip_text"
+        app:layout_constraintBottom_toTopOf="@+id/Rotation_Angle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/Rotation_Angle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/angle_text"
+        app:layout_constraintBottom_toTopOf="@+id/Forward_Backward_Strength"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Grip_Strength" />
+
+    <TextView
+        android:id="@+id/Forward_Backward_Strength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/forward_text"
+        app:layout_constraintBottom_toTopOf="@+id/UpDown_Strength"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Rotation_Angle" />
+
+    <TextView
+        android:id="@+id/UpDown_Strength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/up_down_text"
+        app:layout_constraintBottom_toTopOf="@+id/Connect_Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Forward_Backward_Strength" />
+
+    <io.github.controlwear.virtual.joystick.android.JoystickView xmlns:custom="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/Angle_joystick"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        custom:JV_backgroundColor="#D8D8D8"
+        custom:JV_borderColor="#03A9F4"
+        custom:JV_borderWidth="4dp"
+        custom:JV_buttonColor="#FD1400"
+        custom:JV_buttonSizeRatio="15%"
+        custom:JV_fixedCenter="true"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent" />
+
+    <io.github.controlwear.virtual.joystick.android.JoystickView xmlns:custom="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/UpDown_joystick"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        custom:JV_backgroundColor="#D8D8D8"
+        custom:JV_borderColor="#FD1400"
+        custom:JV_borderWidth="4dp"
+        custom:JV_buttonColor="#FF6E40"
+        custom:JV_buttonDirection="vertical"
+        custom:JV_buttonSizeRatio="15%"
+        custom:JV_fixedCenter="true"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintStart_toStartOf="parent" />
+
+    <io.github.controlwear.virtual.joystick.android.JoystickView xmlns:custom="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/joystickView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="70dp"
+        app:JV_backgroundColor="#D8D8D8"
+        app:JV_borderColor="#4CAF50"
+        app:JV_borderWidth="4dp"
+        app:JV_buttonColor="#9C27B0"
+        app:JV_buttonDirection="vertical"
+        app:JV_buttonSizeRatio="15%"
+        app:JV_fixedCenter="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Angle_joystick"
+        app:layout_constraintStart_toEndOf="@+id/UpDown_joystick" />
+
+
+</android.support.constraint.ConstraintLayout>
