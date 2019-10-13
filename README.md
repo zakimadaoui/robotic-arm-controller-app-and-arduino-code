@@ -1,4 +1,4 @@
-# Bluetooth Robotic arm controller app + Arduino code
+# Bluetooth Robotic arm controller app + Arduino
 
   This project is an android app for controlling a 4 axis robotic arm using an arduino micro-controller and an HC-06 bluetooth module (or any other BT module).
 
